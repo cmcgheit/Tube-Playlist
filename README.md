@@ -18,7 +18,7 @@ Included:
 
 ![simulator screen shot jul 7 2017 10 47 39 pm](https://user-images.githubusercontent.com/24944725/27982524-fccf0ac4-6368-11e7-82d4-9be4eaefddf8.png)
 
-![Tube Playlist Gif](https://github.com/cmcgheit/Hacker-News-Reader/blob/master/tubeplaylist.gif)
+![Tube Playlist Gif](https://github.com/cmcgheit/Tube-Playlist/blob/master/tubeplaylist.gif)
 
 
 
