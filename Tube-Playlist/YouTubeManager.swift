@@ -11,8 +11,8 @@ import SwiftyJSON
 
 class YouTubeManager: NSObject {
     //MARK: - YouTube API Keys
-    let API_KEY = "AIzaSyDp694pmJCvVwjXv_ucwwIU4dGyydfAAQU"
-    let CHANNEL_ID = "UCE_M8A5yxnLfW0KghEeajjw" // Apple Channel ID
+    let API_KEY = ""
+    let CHANNEL_ID = "" // Apple Channel ID
     let MAX_RESULTS = "5"
     
     //MARK: - Variables
