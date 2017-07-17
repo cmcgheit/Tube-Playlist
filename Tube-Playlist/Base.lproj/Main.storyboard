@@ -184,19 +184,34 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Az9-QI-Jrq">
                                 <rect key="frame" x="0.0" y="524" width="320" height="44"/>
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="iDg-We-eHY"/>
-                                    <barButtonItem style="plain" id="P5Y-0N-fee">
-                                        <segmentedControl key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="B7U-0b-3bd">
-                                            <rect key="frame" x="72" y="7" width="175" height="30"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hPp-g7-5Zc"/>
+                                    <barButtonItem style="plain" id="K05-TD-P0M">
+                                        <view key="customView" contentMode="scaleToFill" id="Q17-eR-7sE" customClass="CustomSegmentedControl" customModule="Tube_Playlist" customModuleProvider="target">
+                                            <rect key="frame" x="60" y="5" width="200" height="34"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <segments>
-                                                <segment title="Playlists"/>
-                                                <segment title="Videos"/>
-                                            </segments>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="commaSeparatedButtonTitles" value="Playlists | Videos"/>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="selectorColor">
+                                                    <color key="value" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="selectorTextColor">
+                                                    <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
                                             <connections>
-                                                <action selector="segmentedControlValueChanged:" destination="0tb-5M-eFA" eventType="valueChanged" id="waz-dj-LDl"/>
+                                                <action selector="segmentedControlValueChange:" destination="0tb-5M-eFA" eventType="valueChanged" id="uJA-jz-Itv"/>
                                             </connections>
-                                        </segmentedControl>
+                                        </view>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="fkB-Tp-Rgr"/>
                                 </items>
@@ -222,7 +237,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="TvD-cL-Fdp"/>
                     <connections>
-                        <outlet property="playlistOrVideoSegmentedControl" destination="B7U-0b-3bd" id="OX1-Ef-II5"/>
+                        <outlet property="playlistOrVideoSegmentedControl" destination="Q17-eR-7sE" id="4O5-u2-Uuw"/>
                         <outlet property="searchBar" destination="Ym5-if-31p" id="tTX-0L-fWg"/>
                         <outlet property="videosTableView" destination="Nbt-HW-K8j" id="s70-ct-EWy"/>
                         <outlet property="waitingView" destination="2Jx-2v-XPp" id="aOR-aa-ha3"/>

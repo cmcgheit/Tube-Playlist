@@ -20,7 +20,7 @@ class HomeViewController: UIViewController {
   
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var videosTableView: UITableView!
-    @IBOutlet weak var playlistOrVideoSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var playlistOrVideoSegmentedControl: CustomSegmentedControl!
     @IBOutlet weak var waitingView: UIView!
     
     var searchingPlaylist : Bool = false
@@ -55,21 +55,23 @@ class HomeViewController: UIViewController {
         }
     }
 }
-
-//MARK: - Segmented Actions
-@IBAction func segmentedControlValueChanged(_ sender: Any) {
     
-    if playlistOrVideoSegmentedControl.selectedSegmentIndex == 0 {
-        print("load playlists")
-        searchingPlaylist = false
-    }
-    else {
-        print("load videos")
-    }
-    self.videosTableView.reloadData()
-}
-
+    // MARK : - Segmented Controls
     
+    @IBAction func segmentedControlValueChange(_ sender: Any) {
+        
+        if playlistOrVideoSegmentedControl.selectedSegmentIndex == 0 {
+            print("load playlists")
+            searchingPlaylist = false
+        }
+        else {
+            print("load videos")
+        }
+        
+        self.videosTableView.reloadData()
+    }
+
+
 override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
