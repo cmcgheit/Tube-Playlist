@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Kingfisher
+// import Kingfisher
 import youtube_ios_player_helper
 
 class VideoTableViewCell: UITableViewCell {
@@ -23,13 +23,10 @@ class VideoTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     func configureVideoInfo(_ video : YouTubeModel) {
@@ -46,7 +43,7 @@ class VideoTableViewCell: UITableViewCell {
         }
         
         if let videoThumbnail = self.video.thumbnail {
-            thumbnailImgView.kf.setImage(with: URL(string : videoThumbnail))
+            // thumbnailImgView.kf.setImage(with: URL(string : videoThumbnail))
         }
     }
     

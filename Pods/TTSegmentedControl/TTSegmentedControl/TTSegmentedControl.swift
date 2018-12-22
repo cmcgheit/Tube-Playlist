@@ -5,7 +5,6 @@
 //  Created by Dumitru Igor on 7/28/16.
 //  Copyright © 2016 Dumitru Igor. All rights reserved.
 //
-
 import UIKit
 
 
@@ -187,7 +186,6 @@ open class TTSegmentedControl: UIView {
 }
 
 //MARK: - UIConfiguration
-
 extension TTSegmentedControl {
     
     fileprivate func configureSelectedView() {
@@ -331,7 +329,6 @@ extension TTSegmentedControl {
 }
 
 //MARK: - UIResponder Methods
-
 extension TTSegmentedControl {
     
     override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -434,7 +431,6 @@ extension TTSegmentedControl {
 }
 
 //MARK: -  Frames
-
 extension TTSegmentedControl {
     
     fileprivate func configureViewBounds() {
@@ -500,7 +496,7 @@ extension TTSegmentedControl {
             
         }, completion: { (completed) in
             self.lastSelectedViewWidth = self.thumbContainerView.frame.size.width
-        }) 
+        })
     }
     
     fileprivate func selectedViewWidthForPoint(_ point: CGPoint)-> CGFloat {
@@ -727,7 +723,6 @@ extension TTSegmentedControl {
 
 
 //MARK: - UIView Extension
-
 extension NSAttributedString {
     func stringSize() -> CGSize {
         return self.boundingRect(with: CGSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude), options: .usesLineFragmentOrigin, context: nil).size

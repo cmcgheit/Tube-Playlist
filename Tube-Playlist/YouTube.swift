@@ -11,13 +11,13 @@ import SwiftyJSON
 
 class YouTube: NSObject {
     
-    var kind : String?
-    var eta : String?
-    var previousPageToken : String?
-    var nextPageToken : String?
-    var totalResults : String?
-    var resultsPerPage : String?
-    var items : [YouTubeModel]?
+    var kind: String?
+    var eta: String?
+    var previousPageToken: String?
+    var nextPageToken: String?
+    var totalResults: String?
+    var resultsPerPage: String?
+    var items: [YouTubeModel]?
     
     override init() {
         kind = ""

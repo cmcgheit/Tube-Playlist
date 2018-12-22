@@ -11,12 +11,11 @@ import SwiftyJSON
 
 class YouTubeModel: NSObject {
 
-    
-    var playlistID : String?
-    var videoID : String?
-    var title : String?
-    var descr : String?
-    var thumbnail : String?
+    var playlistID: String?
+    var videoID: String?
+    var title: String?
+    var descr: String?
+    var thumbnail: String?
     
     override init () {
         playlistID = ""

@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Kingfisher
+// import Kingfisher
 
 class PlaylistTableViewCell: UITableViewCell {
     
@@ -20,13 +20,10 @@ class PlaylistTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-        
-        // Configure the view for the selected state
     }
     
     func configurePlaylistInfo(_ playlist : YouTubeModel) {
@@ -41,7 +38,7 @@ class PlaylistTableViewCell: UITableViewCell {
         }
         
         if let playlistThumbnail = self.playlist.thumbnail {
-            thumbnailImgView.kf.setImage(with: URL(string: playlistThumbnail))
+            // thumbnailImgView.kf.setImage(with: URL(string: playlistThumbnail))
         }
     }
     

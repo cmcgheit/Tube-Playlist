@@ -21,13 +21,13 @@ enum parameter {
     case allVideosOnPlaylist
 }
 
-enum API : String {
+enum API: String {
     case allVideos = "https://www.googleapis.com/youtube/v3/search"
     case allPlaylists = "https://www.googleapis.com/youtube/v3/playlists"
     case allVideosOnPlaylist = "https://www.googleapis.com/youtube/v3/playlistItems"
 }
 
-enum videoKind : String {
+enum videoKind: String {
     case allVideos = "youtube#searchListResponse"
     case allPlaylists = "youtube#playlistListResponse"
     case allVideosOnPlaylist = "youtube#playlistItemListResponse"

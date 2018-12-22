@@ -6,7 +6,6 @@
 //  Copyright © 2017 C McGhee. All rights reserved.
 //
 
-
 import UIKit
 import youtube_ios_player_helper
 import SwiftyJSON
@@ -23,7 +22,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var playlistOrVideoSegmentedControl: CustomSegmentedControl!
     @IBOutlet weak var waitingView: UIView!
     
-    var searchingPlaylist : Bool = false
+    var searchingPlaylist: Bool = false
     
     var filteredVideos = [String]()
     var isSearching = false

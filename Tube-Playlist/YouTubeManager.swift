@@ -18,7 +18,6 @@ class YouTubeManager: NSObject {
     //MARK: - Variables
     let manager = APIManager()
     
-    
     //MARK: - Custom Methods
     func fetchYouTubeData (urlAPI: API, videoType: videoType, parameters: parameter, pageToken: String, playlist: String, completion: @escaping(Any?) -> Void) {
         let params = transformToParameterFormat(param: parameters, playlistID: playlist, pageToken: pageToken)
@@ -28,11 +27,11 @@ class YouTubeManager: NSObject {
                 print("Error: \(error.localizedDescription)")
                 completion(error)
             }
-            else if (result as? Data) != nil {
-                let json = JSON(data: result as! Data)
-                let ytModel = YouTube(dataJSON: json)
-                completion(ytModel)
-            }
+//            else if (result as? Data) != nil {
+//                let json = JSON(data: result as! Data)
+//                let ytModel = YouTube(dataJSON: json)
+//                completion(ytModel)
+//            }
             else {
                 print("Something else was returned: \(result.debugDescription)")
                 completion(result)
