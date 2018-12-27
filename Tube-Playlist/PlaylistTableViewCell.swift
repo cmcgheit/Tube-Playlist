@@ -7,7 +7,7 @@
 //
 
 import UIKit
-// import Kingfisher
+import Kingfisher
 
 class PlaylistTableViewCell: UITableViewCell {
     
@@ -38,7 +38,7 @@ class PlaylistTableViewCell: UITableViewCell {
         }
         
         if let playlistThumbnail = self.playlist.thumbnail {
-            // thumbnailImgView.kf.setImage(with: URL(string: playlistThumbnail))
+            thumbnailImgView.kf.setImage(with: URL(string: playlistThumbnail))
         }
     }
     
