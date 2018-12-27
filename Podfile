@@ -7,12 +7,12 @@ target 'Tube-Playlist' do
 
   # Pods for Tube-Playlist
 
-    pod 'youtube-ios-player-helper'
-	pod 'SwiftyJSON'
-	pod 'Alamofire'
-    #pod 'Kingfisher'
-	pod 'TTSegmentedControl'
-    pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git', :branch => 'wip/swift4'
+  pod 'youtube-ios-player-helper'
+  pod 'SwiftyJSON'
+  pod 'Alamofire'
+  pod 'Kingfisher'
+  pod 'TTSegmentedControl'
+  pod 'ChameleonFramework/Swift', :git => 'https://github.com/ViccAlexander/Chameleon.git', :branch => 'wip/swift4'
 
   target 'Tube-PlaylistTests' do
     inherit! :search_paths

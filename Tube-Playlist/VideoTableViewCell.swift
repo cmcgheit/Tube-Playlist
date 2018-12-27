@@ -7,7 +7,7 @@
 //
 
 import UIKit
-// import Kingfisher
+import Kingfisher
 import youtube_ios_player_helper
 
 class VideoTableViewCell: UITableViewCell {
@@ -43,7 +43,7 @@ class VideoTableViewCell: UITableViewCell {
         }
         
         if let videoThumbnail = self.video.thumbnail {
-            // thumbnailImgView.kf.setImage(with: URL(string : videoThumbnail))
+            thumbnailImgView.kf.setImage(with: URL(string : videoThumbnail))
         }
     }
     

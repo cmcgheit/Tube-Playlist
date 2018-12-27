@@ -3,6 +3,7 @@ PODS:
   - ChameleonFramework/Default (2.1.0)
   - ChameleonFramework/Swift (2.1.0):
     - ChameleonFramework/Default
+  - Kingfisher (5.0.1)
   - SwiftyJSON (4.2.0)
   - TTSegmentedControl (0.4.7)
   - youtube-ios-player-helper (0.1.6)
@@ -10,13 +11,15 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - ChameleonFramework/Swift (from `https://github.com/ViccAlexander/Chameleon.git`, branch `wip/swift4`)
+  - Kingfisher
   - SwiftyJSON
-  - TTSegmentedControl (~> 0.3)
+  - TTSegmentedControl
   - youtube-ios-player-helper
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Alamofire
+    - Kingfisher
     - SwiftyJSON
     - TTSegmentedControl
     - youtube-ios-player-helper
@@ -34,10 +37,11 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: 3ec537f71edc9804815215393ae2b1a8ea33a844
   ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
+  Kingfisher: 4f771421b9208185217550528a06fd48756cb7c2
   SwiftyJSON: c4bcba26dd9ec7a027fc8eade48e2c911f229e96
   TTSegmentedControl: 422a8fab507a02a60050476d69d577052550f592
   youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 6ca67803041f44f8de02c2b4c9b6f906a79ed085
+PODFILE CHECKSUM: f127e4ffef9ea3525961d6ca08434d2379949697
 
 COCOAPODS: 1.5.2

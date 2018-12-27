@@ -281,8 +281,8 @@ extension TTSegmentedControl {
         let textColor = isSelected ? selectedTextColor : defaultTextColor
         let textFont = isSelected ? selectedTextFont : defaultTextFont
         
-        let attributes = [NSForegroundColorAttributeName : textColor,
-                          NSFontAttributeName : textFont]
+        let attributes = [NSAttributedString.Key.foregroundColor : textColor,
+                          NSAttributedString.Key.font : textFont]
         let attributedString = NSMutableAttributedString(string: text, attributes: attributes)
         return attributedString
     }

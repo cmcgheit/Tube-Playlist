@@ -97,7 +97,7 @@ class CustomSegmentedControl: UIControl {
         layer.cornerRadius = frame.height/2
   }
     
-    func buttonTapped(button: UIButton) {
+    @objc func buttonTapped(button: UIButton) {
         for (buttonIndex, btn) in buttons.enumerated() {
             btn .setTitleColor(textColor, for: .normal)
             
