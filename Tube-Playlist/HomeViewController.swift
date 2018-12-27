@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
     var videosOnChannel = YouTube()
     var playlistsOnChannel = YouTube()
     var videosOnPlaylist = YouTube()
-  
+    
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var videosTableView: UITableView!
     @IBOutlet weak var playlistOrVideoSegmentedControl: CustomSegmentedControl!
@@ -28,32 +28,31 @@ class HomeViewController: UIViewController {
     var isSearching = false
     
     override func viewDidLoad() {
-            super.viewDidLoad()
+        super.viewDidLoad()
         
         self.navigationItem.title = "Youtube Playlists"
         
         searchingPlaylist = false
         
-//    // MARK: Searchbar properties
-//        
-//    searchBar.delegate = self as! UISearchBarDelegate
-//    searchBar.returnKeyType = UIReturnKeyType.done
+        fetchVideos()
+        
+    }
     
-
-    ytManager.fetchYouTubeData(urlAPI: .allPlaylists, videoType: .playlistOnChannel, parameters: .allPlaylists, pageToken: "", playlist: "") { (result) in
-        if let modelResult = result as? YouTube {
-            self.playlistsOnChannel = modelResult
-            
-            self.ytManager.fetchYouTubeData(urlAPI: .allVideos, videoType: .videoOnChannel, parameters: .allVideos, pageToken: "", playlist: "", completion: { (result2) in
-                if let modelResult2 = result2 as? YouTube {
-                    self.videosOnChannel = modelResult2
-                    self.videosTableView.reloadData()
-                    self.waitingView.isHidden = true
-                }
-            })
+    func fetchVideos() {
+        ytManager.fetchYouTubeData(urlAPI: .allPlaylists, videoType: .playlistOnChannel, parameters: .allPlaylists, pageToken: "", playlist: "") { (result) in
+            if let modelResult = result as? YouTube {
+                self.playlistsOnChannel = modelResult
+                
+                self.ytManager.fetchYouTubeData(urlAPI: .allVideos, videoType: .videoOnChannel, parameters: .allVideos, pageToken: "", playlist: "", completion: { (result2) in
+                    if let modelResult2 = result2 as? YouTube {
+                        self.videosOnChannel = modelResult2
+                        self.videosTableView.reloadData()
+                        self.waitingView.isHidden = true
+                    }
+                })
+            }
         }
     }
-}
     
     // MARK : - Segmented Controls
     
@@ -69,12 +68,12 @@ class HomeViewController: UIViewController {
         
         self.videosTableView.reloadData()
     }
-
-
-override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-   }
+    
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
 }
 
 //MARK: - TableView Delegate Methods
@@ -94,21 +93,21 @@ extension HomeViewController : UITableViewDelegate {
             ytManager.fetchYouTubeData(urlAPI: .allVideosOnPlaylist, videoType: .videoOnPlaylist, parameters: .allVideosOnPlaylist, pageToken: "", playlist: selectedCell.playlist.playlistID!, completion: { (result) in
                 if let modelResult = result as? YouTube {
                     self.videosOnPlaylist = modelResult
-              }
-                   self.playlistOrVideoSegmentedControl.selectedSegmentIndex = 1
-                   self.waitingView.isHidden = true
-                   self.videosTableView.reloadData()
-               })
-               }
+                }
+                self.playlistOrVideoSegmentedControl.selectedSegmentIndex = 1
+                self.waitingView.isHidden = true
+                self.videosTableView.reloadData()
+            })
+        }
             
-                else {
-               let selectedCell = tableView.cellForRow(at: indexPath) as! VideoTableViewCell
-   
-                selectedCell.ytIndicatorView.startAnimating()
-                selectedCell.playerView.load(withVideoId: selectedCell.video.videoID!)
-                print("Selected Video: \(selectedCell.video.videoID)")
-               }
-            }
+        else {
+            let selectedCell = tableView.cellForRow(at: indexPath) as! VideoTableViewCell
+            
+            selectedCell.ytIndicatorView.startAnimating()
+            selectedCell.playerView.load(withVideoId: selectedCell.video.videoID!)
+            print("Selected Video: \(selectedCell.video.videoID)")
+        }
+    }
 }
 
 //MARK: - TableView Datasource Methods
@@ -132,35 +131,35 @@ extension HomeViewController : UITableViewDataSource {
         }
     }
     
-//        if isSearching {
-//            text = filteredVideos[indexPath.row]
-//        } else {
-//            videoCell.configureVideoInfo((videosOnPlaylist.items?[indexPath.row])!) && videoCell.configureVideoInfo((videosOnChannel.items?[indexPath.row])!)
-//        }
-//    }
+    //        if isSearching {
+    //            text = filteredVideos[indexPath.row]
+    //        } else {
+    //            videoCell.configureVideoInfo((videosOnPlaylist.items?[indexPath.row])!) && videoCell.configureVideoInfo((videosOnChannel.items?[indexPath.row])!)
+    //        }
+    //    }
     
-
-  func numberOfSections(in tableView: UITableView) -> Int {
-    return 1
-}
-
-  func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-    if playlistOrVideoSegmentedControl.selectedSegmentIndex == 0 {
-        return playlistsOnChannel.items!.count
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
-    else {
-        if searchingPlaylist {
-            return videosOnPlaylist.items!.count
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if playlistOrVideoSegmentedControl.selectedSegmentIndex == 0 {
+            return playlistsOnChannel.items!.count
         }
-        else{
-            
-            return videosOnChannel.items!.count
+        else {
+            if searchingPlaylist {
+                return videosOnPlaylist.items!.count
+            }
+            else{
+                
+                return videosOnChannel.items!.count
+            }
         }
     }
-}
-
-
+    
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 116
     }
@@ -221,24 +220,48 @@ extension HomeViewController : UITableViewDataSource {
         func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
             tableView.deselectRow(at: indexPath, animated: true)
         }
+    }
 }
+
+extension HomeViewController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let text = searchController.searchBar.text else { return }
+    }
+    
+    func makeSearch() {
+        let search = UISearchController(searchResultsController: nil)
+        search.searchResultsUpdater = self
+        search.obscuresBackgroundDuringPresentation = false
+        search.searchBar.placeholder = "Type to search videos"
+        search.hidesNavigationBarDuringPresentation = true
+        search.dimsBackgroundDuringPresentation = false
+        search.searchBar.barStyle = .default
+        search.searchBar.sizeToFit()
+        if #available(iOS 11.0, *) {
+            navigationItem.searchController = search
+        } else {
+            //searchBar outlet
+        }
+    }
+    
+    
+    // MARK : SearchBar Methods
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchBar.text == nil || searchBar.text == "" {
+            isSearching = false
+            view.endEditing(true)
+            videosTableView.reloadData()
+        } else {
+            isSearching = true
+            // filteredVideos = modelResult2.filter({$0 == searchBar.text})
+            
+            videosTableView.reloadData()
+        }
+    }
 }
 
 
-//
-//// MARK : SearchBar Methods
-//func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//    if searchBar.text == nil || searchBar.text == "" {
-//        isSearching = false
-//        view.endEditing(true)
-//        tableView.reloadData()
-//    } else {
-//        isSearching = true
-//        filteredVideos = data.filter({$0 == searchBar.text})
-//        
-//        tableView.reloadData()
-//    }
-//}
 
 
 
