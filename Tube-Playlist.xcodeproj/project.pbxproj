@@ -105,11 +105,11 @@
 		6A16BA461ED4D3F300AA35ED /* Tube-Playlist */ = {
 			isa = PBXGroup;
 			children = (
+				6AFAF0782220E05800DCAF28 /* Model */,
+				6AFAF0772220E02D00DCAF28 /* View */,
+				6AFAF0762220DFF500DCAF28 /* Controller */,
+				6AFAF0792220E07500DCAF28 /* Manager */,
 				6A16BA471ED4D3F300AA35ED /* AppDelegate.swift */,
-				6A16BA6A1ED4D43400AA35ED /* ViewControllers */,
-				6A16BA691ED4D42900AA35ED /* Cells */,
-				6A16BA681ED4D42100AA35ED /* Manager */,
-				6A16BA671ED4D41900AA35ED /* Models */,
 				6A16BA4B1ED4D3F300AA35ED /* Main.storyboard */,
 				6A16BA4E1ED4D3F300AA35ED /* Assets.xcassets */,
 				6A16BA501ED4D3F300AA35ED /* LaunchScreen.storyboard */,
@@ -127,41 +127,41 @@
 			path = "Tube-PlaylistTests";
 			sourceTree = "<group>";
 		};
-		6A16BA671ED4D41900AA35ED /* Models */ = {
+		6AFAF0762220DFF500DCAF28 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				6A08AD2D1F1C565000432474 /* CustomSegmentedControl.swift */,
+				6A16BA491ED4D3F300AA35ED /* HomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		6AFAF0772220E02D00DCAF28 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6A16BA6D1ED4FCE800AA35ED /* PlaylistTableViewCell.swift */,
+				6A16BA6B1ED4FC1F00AA35ED /* VideoTableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6AFAF0782220E05800DCAF28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
 				6A16BA731ED4FD7800AA35ED /* Enums.swift */,
 				6A16BA751ED4FD8500AA35ED /* YouTube.swift */,
 				6A16BA771ED4FD9200AA35ED /* YouTubeModel.swift */,
+				6A08AD2D1F1C565000432474 /* CustomSegmentedControl.swift */,
 			);
-			name = Models;
+			path = Model;
 			sourceTree = "<group>";
 		};
-		6A16BA681ED4D42100AA35ED /* Manager */ = {
+		6AFAF0792220E07500DCAF28 /* Manager */ = {
 			isa = PBXGroup;
 			children = (
 				6A16BA6F1ED4FD3C00AA35ED /* APIManager.swift */,
 				6A16BA711ED4FD5800AA35ED /* YouTubeManager.swift */,
 			);
-			name = Manager;
-			sourceTree = "<group>";
-		};
-		6A16BA691ED4D42900AA35ED /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				6A16BA6B1ED4FC1F00AA35ED /* VideoTableViewCell.swift */,
-				6A16BA6D1ED4FCE800AA35ED /* PlaylistTableViewCell.swift */,
-			);
-			name = Cells;
-			sourceTree = "<group>";
-		};
-		6A16BA6A1ED4D43400AA35ED /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				6A16BA491ED4D3F300AA35ED /* HomeViewController.swift */,
-			);
-			name = ViewControllers;
+			path = Manager;
 			sourceTree = "<group>";
 		};
 		7B55A7B90DF52F87ED16A1B7 /* Frameworks */ = {
